@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Gabbu!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1, p {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        h1 {
+            color: #ff3366;
+            font-size: 3em;
+            animation-delay: 0.2s;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        p:nth-of-type(1) { animation-delay: 2s; }
+        p:nth-of-type(2) { animation-delay: 4s; }
+        p:nth-of-type(3) { animation-delay: 6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        img {
+             max-width: 90%;
+             height: auto;
+             border-radius: 15px;
+             margin: 20px 0;
+             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+             opacity: 0;
+             transform: scale(0.9);
+             animation: fadeInUp 1s forwards;
+             animation-delay: 1s;
+             max-height: 400px;
+             object-fit: cover;
+        }
+
+        .heart {
+            color: #ff3366;
+            font-size: 2em;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .button {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1em;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #e62e5c;
+        }
+
+        #surprise {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ff3366;
+            animation: fadeInUp 1s forwards;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: absolute;
+            color: #ff3366;
+            font-size: 2em;
+            animation: floatUp 5s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday Gabbbbbbuuuuuuu! ❤️</h1>
+    
+    <p>Thank you for being my constant — my listener, my partner-in-crime, and my favorite person to annoy 😄.</p>
+    
+    <p>Sometimes I wonder how you handle my yapping.....but deep down I know, you love every bit of it!😜</p>
+
+    <p>Here’s to more laughs, endless talks, and our crazy story. Love you loads! 🥰</p>
+
+    <!-- Your picture here -->
+    <!-- Example -->
+    <img src="bdaypic.jpeg" alt="First pic was crazyy"> 
+
+    <div class="heart">First pic was crazyy tho!!!🤣🤣❤️</div>
+
+    <button class="button" onclick="showSurprise()">Click to see a surprise!</button>
+
+    <div id="surprise">Surprise! You mean the world to me, and this is just a small way to say it. 💖</div>
+
+    <!-- Floating hearts -->
+    <script>
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+        }
+
+        // Floating hearts animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+            heart.innerText = '❤️';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 800);
+    </script>
+
+</body>
+</html>
